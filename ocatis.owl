@@ -1,0 +1,4074 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrlx="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#"
+    xmlns="http://www.owl-ontologies.com/OCATIS.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:temporal="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:www="http://www.owl-ontologies.com/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+  xml:base="http://www.owl-ontologies.com/OCATIS.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl"/>
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl"/>
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="TouristType"/>
+  <owl:Class rdf:ID="Morning">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DayTime"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MorningEvening"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SexShopLover">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ShopLover"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Museum">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Art"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BarLover">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DrinkFoodLover"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Speed"/>
+  <owl:Class rdf:ID="Church">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Art"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ArtLover">
+    <rdfs:subClassOf rdf:resource="#TouristType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DinnerTime">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NightTime"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LunchTime">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DayTime"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DrinkFood">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LocationType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Rule"/>
+  <owl:Class rdf:ID="Restaurant">
+    <rdfs:subClassOf rdf:resource="#DrinkFood"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FastWalker">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:complementOf>
+          <owl:Class rdf:ID="SlowWalker"/>
+        </owl:complementOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Speed"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tour"/>
+  <owl:Class rdf:ID="AntiqueShop">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Shop"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PresentTourist"/>
+  <owl:Class rdf:about="#DayTime">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Time"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DrinkFoodLover">
+    <rdfs:subClassOf rdf:resource="#TouristType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Robot">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MonumentLover">
+    <rdfs:subClassOf rdf:resource="#ArtLover"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AntiqueShopLover">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ShopLover"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tourist"/>
+  <owl:Class rdf:ID="HistoryUnit"/>
+  <owl:Class rdf:ID="RestaurantLover">
+    <rdfs:subClassOf rdf:resource="#DrinkFoodLover"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Beacon">
+    <rdfs:subClassOf rdf:resource="#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LocationHistoryUnit">
+    <rdfs:subClassOf rdf:resource="#HistoryUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Midnight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NightTime"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Art">
+    <rdfs:subClassOf rdf:resource="#LocationType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SexShop">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Shop"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ShopLover">
+    <rdfs:subClassOf rdf:resource="#TouristType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Message"/>
+  <owl:Class rdf:ID="Bar">
+    <rdfs:subClassOf rdf:resource="#DrinkFood"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MuseumLover">
+    <rdfs:subClassOf rdf:resource="#ArtLover"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NightTime">
+    <rdfs:subClassOf rdf:resource="#Time"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Monument">
+    <rdfs:subClassOf rdf:resource="#Art"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MessageQueue"/>
+  <owl:Class rdf:ID="PathHistoryUnit">
+    <rdfs:subClassOf rdf:resource="#HistoryUnit"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Evening">
+    <rdfs:subClassOf rdf:resource="#DayTime"/>
+    <rdfs:subClassOf rdf:resource="#MorningEvening"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Shop">
+    <rdfs:subClassOf rdf:resource="#LocationType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SlowWalker">
+    <rdfs:subClassOf rdf:resource="#Speed"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ChurchLover">
+    <rdfs:subClassOf rdf:resource="#ArtLover"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TourUnit"/>
+  <owl:Class rdf:ID="MallShopLover">
+    <rdfs:subClassOf rdf:resource="#ShopLover"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CafeteriaLover">
+    <rdfs:subClassOf rdf:resource="#DrinkFoodLover"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#ValidPeriod">
+    <rdfs:subClassOf rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#ValidTime"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasFromAgent">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#HistoryUnit"/>
+          <owl:Class rdf:about="#TourUnit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/broader"/>
+  <owl:ObjectProperty rdf:ID="narrower"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/semantic_type"/>
+  <owl:ObjectProperty rdf:ID="hasToAgent">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#HistoryUnit"/>
+          <owl:Class rdf:about="#TourUnit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTimeOfTheDay">
+    <rdfs:range rdf:resource="#Time"/>
+    <rdfs:domain rdf:resource="#HistoryUnit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasValidInstant">
+    <rdfs:range rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#ValidInstant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTourist">
+    <rdfs:range rdf:resource="#Tourist"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MessageQueue"/>
+          <owl:Class rdf:about="#PresentTourist"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/synonym"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/documentation"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/cui"/>
+  <owl:ObjectProperty rdf:ID="hasLocationType">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Agent"/>
+          <owl:Class rdf:about="#HistoryUnit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#LocationType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="related_slot"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/related_slot"/>
+  <owl:ObjectProperty rdf:ID="hasMessage">
+    <rdfs:range rdf:resource="#Message"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MessageQueue"/>
+          <owl:Class rdf:about="#Tourist"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/narrower"/>
+  <owl:ObjectProperty rdf:ID="documentation"/>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/name"/>
+  <owl:ObjectProperty rdf:ID="hasValidPeriod">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#HistoryUnit"/>
+          <owl:Class rdf:about="#PresentTourist"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#ValidPeriod"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasHistoryUnit">
+    <rdfs:range rdf:resource="#HistoryUnit"/>
+    <rdfs:domain rdf:resource="#Tourist"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="broader"/>
+  <owl:ObjectProperty rdf:ID="hasTourUnit">
+    <rdfs:range rdf:resource="#TourUnit"/>
+    <rdfs:domain rdf:resource="#Tour"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="cui"/>
+  <owl:ObjectProperty rdf:ID="hasAgent">
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MessageQueue"/>
+          <owl:Class rdf:about="#PresentTourist"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="tour">
+    <rdfs:domain rdf:resource="#Tourist"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="picture">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Message"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="spendTime_Art">
+    <rdfs:domain rdf:resource="#Tourist"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="language">
+    <rdfs:domain rdf:resource="#Tourist"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="repeat">
+    <rdfs:domain rdf:resource="#MessageQueue"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >initial</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >yes</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >not</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lng">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="storyTellingStyle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Tourist"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="description">
+    <rdfs:domain rdf:resource="#Message"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="distance">
+    <rdfs:domain rdf:resource="#PathHistoryUnit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="tourName">
+    <rdfs:domain rdf:resource="#Tour"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lat">
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:ID="mq"/>
+                          <swrl:Variable rdf:ID="t"/>
+                        </swrl:arguments>
+                        <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#createOWLThing"/>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:ID="pt"/>
+                    </swrl:argument1>
+                    <swrl:argument2 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:classPredicate rdf:resource="#ShopLover"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#pt"/>
+            <swrl:classPredicate rdf:resource="#PresentTourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2>
+                  <Message rdf:ID="ShopLoverMessage"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument1 rdf:resource="#mq"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#mq"/>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1>
+              <swrl:Variable rdf:ID="lt"/>
+            </swrl:argument1>
+            <swrl:classPredicate rdf:resource="#Bar"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1>
+                  <swrl:Variable rdf:ID="hu"/>
+                </swrl:argument1>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:classPredicate rdf:resource="#Tourist"/>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument2 rdf:resource="#hu"/>
+                            <swrl:argument1 rdf:resource="#t"/>
+                            <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:argument2 rdf:resource="#lt"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="#hasTimeOfTheDay"/>
+                                    <swrl:argument1 rdf:resource="#hu"/>
+                                    <swrl:argument2>
+                                      <swrl:Variable rdf:ID="tod"/>
+                                    </swrl:argument2>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                        <swrl:argument1 rdf:resource="#hu"/>
+                                        <swrl:argument2>
+                                          <swrl:Variable rdf:ID="vp"/>
+                                        </swrl:argument2>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments rdf:parseType="Collection">
+                                              <swrl:Variable rdf:ID="d"/>
+                                              <swrl:Variable rdf:about="#vp"/>
+                                              <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes">
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+                                              </temporal:Granularity>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="#MorningEvening"/>
+                    <swrl:argument1 rdf:resource="#tod"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_196">
+    <hasLocationType>
+      <Bar rdf:ID="bar"/>
+    </hasLocationType>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >21.37803</distance>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_197">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T17:14:41</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T17:14:41</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay>
+      <Evening rdf:ID="evening"/>
+    </hasTimeOfTheDay>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_103"/>
+  <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Months"/>
+  <owl:Thing rdf:ID="SWRLInjected_101"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_482">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_483">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T15:34:27</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T10:34:27</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasLocationType>
+      <Monument rdf:ID="monument"/>
+    </hasLocationType>
+    <hasTimeOfTheDay>
+      <Morning rdf:ID="morning"/>
+    </hasTimeOfTheDay>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >22.524597</distance>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_102"/>
+  <Beacon rdf:ID="Beacon_2">
+    <hasLocationType rdf:resource="#bar"/>
+    <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >8.938684026489252</lng>
+    <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >44.411416446352135</lat>
+    <hasMessage>
+      <Message rdf:ID="NextDestinationBeacon2"/>
+    </hasMessage>
+  </Beacon>
+  <owl:Thing rdf:ID="SWRLInjected_129"/>
+  <owl:Thing rdf:ID="SWRLInjected_100"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_9">
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_8">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:03:50</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:12:19</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </LocationHistoryUnit>
+  <Rule rdf:ID="SpendTime_Bar"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+            <swrl:classPredicate rdf:resource="#AntiqueShop"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#hu"/>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_128"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_217">
+    <hasLocationType>
+      <Church rdf:ID="church"/>
+    </hasLocationType>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >21.37803</distance>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_218">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T18:14:41</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T18:14:41</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+  </PathHistoryUnit>
+  <rdf:Description rdf:ID="Query-SpendTime_Bar">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <Rule rdf:ID="SpendTimeLocation"/>
+  <owl:Thing rdf:ID="SWRLInjected_127"/>
+  <temporal:ValidPeriod rdf:ID="ValidPeriod_3">
+    <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-08-31T18:42:42</temporal:hasStartTime>
+    <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-08-31T19:42:42</temporal:hasFinishTime>
+  </temporal:ValidPeriod>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="sd"/>
+                </swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="stb"/>
+                    </swrl:argument2>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:ID="astb"/>
+                          <swrl:Variable rdf:about="#stb"/>
+                          <swrl:Variable rdf:about="#sd"/>
+                        </swrl:arguments>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:first rdf:resource="#astb"/>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                                    >120</rdf:first>
+                                  </rdf:List>
+                                </rdf:rest>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#DrinkFoodLover"/>
+            <swrl:argument1 rdf:resource="#t"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+            <swrl:classPredicate rdf:resource="#Bar"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+                <swrl:argument1 rdf:resource="#hu"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Milliseconds"/>
+  <owl:Thing rdf:ID="SWRLInjected_106"/>
+  <owl:Thing rdf:ID="SWRLInjected_125"/>
+  <temporal:ValidPeriod rdf:ID="ValidPeriod_6">
+    <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-08-31T23:32:42</temporal:hasFinishTime>
+    <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-08-31T19:42:42</temporal:hasStartTime>
+  </temporal:ValidPeriod>
+  <rdf:Description rdf:ID="Rule-ArtLoverTime">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_105"/>
+  <Rule rdf:ID="SpendTimePath"/>
+  <owl:Thing rdf:ID="SWRLInjected_124"/>
+  <rdf:Description rdf:ID="Query-SpendTime_Art">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_104"/>
+  <owl:Thing rdf:ID="SWRLInjected_123"/>
+  <owl:Thing rdf:ID="SWRLInjected_62"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#SlowWalker"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:argument2 rdf:resource="#sd"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                                    >50</rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:List>
+                                </rdf:rest>
+                                <rdf:first rdf:resource="#sd"/>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:BuiltinAtom>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                <swrl:arguments>
+                                  <rdf:List>
+                                    <rdf:first>
+                                      <swrl:Variable rdf:ID="s"/>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <rdf:List>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#long"
+                                        >10</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </rdf:List>
+                                    </rdf:rest>
+                                  </rdf:List>
+                                </swrl:arguments>
+                              </swrl:BuiltinAtom>
+                            </rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#s"/>
+                          <swrl:Variable rdf:about="#sd"/>
+                          <swrl:Variable rdf:ID="stp"/>
+                        </swrl:arguments>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#stp"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+            <swrl:argument1 rdf:resource="#t"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Query-SpendTime_Cafeteria">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+            <swrl:classPredicate rdf:resource="#Art"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+                <swrl:argument1 rdf:resource="#hu"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <Rule rdf:ID="SpendTime_Bar_MorningEvening"/>
+  <owl:Thing rdf:ID="SWRLInjected_82"/>
+  <owl:Thing rdf:ID="SWRLInjected_63"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="fhu"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="#t"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="lhu"/>
+                    </swrl:argument2>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument2>
+                              <swrl:Variable rdf:ID="lvp"/>
+                            </swrl:argument2>
+                            <swrl:argument1 rdf:resource="#lhu"/>
+                            <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:DatavaluedPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#hasFinishTime"/>
+                                <swrl:argument1 rdf:resource="#lvp"/>
+                                <swrl:argument2>
+                                  <swrl:Variable rdf:ID="lft"/>
+                                </swrl:argument2>
+                              </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate>
+                                      <rdf:Description rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#hasStartTime">
+                                        <rdfs:domain rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#ValidPeriod"/>
+                                      </rdf:Description>
+                                    </swrl:propertyPredicate>
+                                    <swrl:argument1>
+                                      <swrl:Variable rdf:ID="fvp"/>
+                                    </swrl:argument1>
+                                    <swrl:argument2>
+                                      <swrl:Variable rdf:ID="fst"/>
+                                    </swrl:argument2>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:rest>
+                                                      <rdf:List>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                        <rdf:first
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#long"
+                                                        >1</rdf:first>
+                                                      </rdf:List>
+                                                    </rdf:rest>
+                                                    <rdf:first rdf:resource="#d"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:Variable rdf:ID="n"/>
+                                                </rdf:first>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:BuiltinAtom>
+                                        <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                          <swrl:Variable rdf:about="#d"/>
+                                          <swrl:Variable rdf:about="#fst"/>
+                                          <swrl:Variable rdf:about="#lft"/>
+                                          <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Days">
+                                            <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+                                          </temporal:Granularity>
+                                        </swrl:arguments>
+                                      </swrl:BuiltinAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="#fvp"/>
+                        <swrl:argument1 rdf:resource="#fhu"/>
+                        <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#n"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:ID="Rule-29">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_83"/>
+  <temporal:ValidPeriod rdf:ID="ValidPeriod_7">
+    <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-09-01T01:12:42</temporal:hasFinishTime>
+    <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2010-08-31T23:32:42</temporal:hasStartTime>
+  </temporal:ValidPeriod>
+  <owl:Thing rdf:ID="SWRLInjected_64"/>
+  <owl:Thing rdf:ID="SWRLInjected_84"/>
+  <Restaurant rdf:ID="restaurant"/>
+  <owl:Thing rdf:ID="SWRLInjected_65"/>
+  <owl:Thing rdf:ID="SWRLInjected_26"/>
+  <owl:Thing rdf:ID="SWRLInjected_86"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_1">
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_2">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:00:55</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:00:55</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >45.848293</distance>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_27"/>
+  <owl:Thing rdf:ID="SWRLInjected_87"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+            <swrl:classPredicate rdf:resource="#DrinkFood"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+                <swrl:argument1 rdf:resource="#hu"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_2">
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >127.06093</distance>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_9">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:12:19</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:12:19</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </PathHistoryUnit>
+  <rdf:Description rdf:about="http://www.owl-ontologies.com/Q">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_28"/>
+  <owl:Thing rdf:ID="SWRLInjected_88"/>
+  <owl:Thing rdf:ID="SWRLInjected_60"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_199">
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_198">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T18:14:41</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T17:14:41</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+  </LocationHistoryUnit>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_3">
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >21.37803</distance>
+    <hasTimeOfTheDay>
+      <DinnerTime rdf:ID="dinnerTime"/>
+    </hasTimeOfTheDay>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_11">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:04:35</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:01:49</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasLocationType rdf:resource="#bar"/>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_29"/>
+  <owl:Thing rdf:ID="SWRLInjected_89"/>
+  <owl:Thing rdf:ID="SWRLInjected_61"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_15">
+    <hasTimeOfTheDay>
+      <Midnight rdf:ID="midnight"/>
+    </hasTimeOfTheDay>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_14">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T06:53:32</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T00:53:32</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasLocationType rdf:resource="#bar"/>
+  </LocationHistoryUnit>
+  <rdf:Description rdf:ID="Query-SpendTimeLocation">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_35"/>
+  <Rule rdf:ID="SpendTime_Cafeteria"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_16">
+    <hasToAgent>
+      <Beacon rdf:ID="Beacon_6">
+        <hasMessage>
+          <Message rdf:ID="NextDestinationBeacon6"/>
+        </hasMessage>
+        <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >44.408015047640916</lat>
+        <hasLocationType rdf:resource="#bar"/>
+        <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >8.934361646661753</lng>
+      </Beacon>
+    </hasToAgent>
+    <hasTimeOfTheDay rdf:resource="#midnight"/>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasFromAgent rdf:resource="#Beacon_6"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_15">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:22</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:25</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </LocationHistoryUnit>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#PathHistoryUnit"/>
+            <swrl:argument1 rdf:resource="#hu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                            <swrl:arguments rdf:parseType="Collection">
+                              <swrl:Variable rdf:about="#d"/>
+                              <swrl:Variable rdf:about="#vp"/>
+                              <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#hu"/>
+                        <swrl:argument2 rdf:resource="#vp"/>
+                        <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument2 rdf:resource="#hu"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:classPredicate rdf:resource="#Tourist"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Rule-DrinkFoodLoverTimeAverage">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_34"/>
+  <Rule rdf:ID="SpendTime_Art"/>
+  <rdf:Description rdf:ID="Query-SpendTimePath">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_18">
+    <hasLocationType rdf:resource="#church"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_17">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T05:34:27</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T10:34:27</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#midnight"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_37"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_485">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_484">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T17:34:27</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T15:34:27</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasLocationType rdf:resource="#monument"/>
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_36"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_11">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_10">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:14:36</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:12:19</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.0</distance>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </LocationHistoryUnit>
+  <rdf:Description rdf:ID="Query-SpendTime_Bar_MorningEvening">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <Message rdf:ID="Message1"/>
+  <owl:Thing rdf:ID="SWRLInjected_31"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_40">
+    <hasLocationType rdf:resource="#church"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_39">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T12:53:32</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T18:53:32</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay>
+      <LunchTime rdf:ID="lunchTime"/>
+    </hasTimeOfTheDay>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_10"/>
+  <owl:Thing rdf:ID="SWRLInjected_30"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_13">
+    <hasTimeOfTheDay rdf:resource="#dinnerTime"/>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_12">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:04:35</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T00:44:38</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_81"/>
+  <Message rdf:ID="Message3"/>
+  <owl:Thing rdf:ID="SWRLInjected_13"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_14">
+    <hasLocationType rdf:resource="#monument"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_13">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:34:18</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:34:25</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#dinnerTime"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_80"/>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Adult</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >TeenAge</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+  <owl:Thing rdf:ID="SWRLInjected_12"/>
+  <owl:Thing rdf:ID="SWRLInjected_32"/>
+  <owl:Thing rdf:ID="SWRLInjected_133"/>
+  <Rule rdf:ID="SpendTime_DrinkFood"/>
+  <rdf:Description>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Italian</rdf:first>
+    </rdf:rest>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >English</rdf:first>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_134"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#lt"/>
+                <swrl:classPredicate rdf:resource="#Museum"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+            <swrl:argument1 rdf:resource="#hu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Rule-BarLoverTimeAverage">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_2">
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_1">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:14:36</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T14:14:41</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_135"/>
+  <owl:Thing rdf:ID="SWRLInjected_131"/>
+  <Message rdf:ID="DrinkFoodLoverMessage"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument1 rdf:resource="#mq"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="m"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#mq"/>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasFromAgent"/>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:ID="tu"/>
+                    </swrl:argument1>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="fa"/>
+                    </swrl:argument2>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument2>
+                                  <swrl:Variable rdf:ID="tou"/>
+                                </swrl:argument2>
+                                <swrl:argument1 rdf:resource="#t"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                                        <swrl:argument1 rdf:resource="#pt"/>
+                                        <swrl:argument2 rdf:resource="#t"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#createOWLThing"/>
+                                            <swrl:arguments rdf:parseType="Collection">
+                                              <swrl:Variable rdf:about="#mq"/>
+                                              <swrl:Variable rdf:about="#t"/>
+                                            </swrl:arguments>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            <rdf:first>
+                                              <swrl:SameIndividualAtom>
+                                                <swrl:argument1>
+                                                  <swrl:Variable rdf:ID="ag"/>
+                                                </swrl:argument1>
+                                                <swrl:argument2 rdf:resource="#fa"/>
+                                              </swrl:SameIndividualAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="#hasTourUnit"/>
+                                    <swrl:argument2 rdf:resource="#tu"/>
+                                    <swrl:argument1 rdf:resource="#tou"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument2>
+                              <swrl:Variable rdf:ID="ta"/>
+                            </swrl:argument2>
+                            <swrl:argument1 rdf:resource="#tu"/>
+                            <swrl:propertyPredicate rdf:resource="#hasToAgent"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+                        <swrl:argument2 rdf:resource="#m"/>
+                        <swrl:argument1 rdf:resource="#ta"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="#pt"/>
+                <swrl:argument2 rdf:resource="#ag"/>
+                <swrl:propertyPredicate rdf:resource="#hasAgent"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#pt"/>
+            <swrl:classPredicate rdf:resource="#PresentTourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_132"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#BarLover"/>
+            <swrl:argument1 rdf:resource="#t"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#PresentTourist"/>
+                <swrl:argument1 rdf:resource="#pt"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument1 rdf:resource="#pt"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#mq"/>
+                          <swrl:Variable rdf:about="#t"/>
+                        </swrl:arguments>
+                        <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#createOWLThing"/>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+            <swrl:argument1 rdf:resource="#mq"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2>
+                  <Message rdf:ID="BarLoverMessage"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument1 rdf:resource="#mq"/>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Query-SpendDays">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_130"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >yes</swrl:argument2>
+            <swrl:argument1 rdf:resource="#mq"/>
+            <swrl:propertyPredicate rdf:resource="#repeat"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+            <swrl:argument1 rdf:resource="#mq"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="mt"/>
+                    </swrl:argument2>
+                    <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#mq"/>
+                        <swrl:argument2 rdf:resource="#t"/>
+                        <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:SameIndividualAtom>
+                            <swrl:argument1>
+                              <swrl:Variable rdf:ID="mmq"/>
+                            </swrl:argument1>
+                            <swrl:argument2 rdf:resource="#mt"/>
+                          </swrl:SameIndividualAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:argument2 rdf:resource="#mmq"/>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Rule-Message_ArtLover">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_6">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_5">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T08:44:35</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:00:55</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </LocationHistoryUnit>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#hu"/>
+            <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#Monument"/>
+                <swrl:argument1 rdf:resource="#lt"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Years"/>
+  <rdf:Description rdf:ID="Query-SpendTime_DrinkFood">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <Rule rdf:ID="SpendTime_Restaurant"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_5">
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_4">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:00:55</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T09:00:55</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#morning"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_117"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="globd"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="#t"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="artd"/>
+                    </swrl:argument2>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first>
+                              <swrl:BuiltinAtom>
+                                <swrl:arguments>
+                                  <rdf:List>
+                                    <rdf:rest>
+                                      <rdf:List>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#long"
+                                        >60</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </rdf:List>
+                                    </rdf:rest>
+                                    <rdf:first rdf:resource="#globd"/>
+                                  </rdf:List>
+                                </swrl:arguments>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                              </swrl:BuiltinAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:first>
+                                  <swrl:Variable rdf:ID="div"/>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                                    >0.40</rdf:first>
+                                  </rdf:List>
+                                </rdf:rest>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#div"/>
+                          <swrl:Variable rdf:about="#artd"/>
+                          <swrl:Variable rdf:about="#globd"/>
+                        </swrl:arguments>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+            <swrl:argument1 rdf:resource="#t"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#ShopLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Seconds"/>
+  <owl:Thing rdf:ID="SWRLInjected_116"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#ArtLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                  <swrl:BuiltinAtom>
+                    <swrl:arguments>
+                      <rdf:List>
+                        <rdf:first rdf:resource="#d"/>
+                        <rdf:rest>
+                          <rdf:List>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                            >180</rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          </rdf:List>
+                        </rdf:rest>
+                      </rdf:List>
+                    </swrl:arguments>
+                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  </swrl:BuiltinAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:propertyPredicate rdf:resource="#spendTime_Art"/>
+                <swrl:argument2 rdf:resource="#d"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <SexShop rdf:ID="sexShop"/>
+  <rdf:Description rdf:ID="Query-SpendTime_Museum">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_58"/>
+  <owl:Thing rdf:ID="SWRLInjected_119"/>
+  <owl:Thing rdf:ID="SWRLInjected_99"/>
+  <Tour rdf:ID="bibi">
+    <hasTourUnit>
+      <TourUnit rdf:ID="TourUnit_1">
+        <hasFromAgent>
+          <Beacon rdf:ID="Beacon_5">
+            <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >44.40800738323034</lat>
+            <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >8.93411086011886</lng>
+            <hasMessage>
+              <Message rdf:ID="NextDestinationBeacon5"/>
+            </hasMessage>
+            <hasLocationType rdf:resource="#bar"/>
+          </Beacon>
+        </hasFromAgent>
+        <hasToAgent>
+          <Robot rdf:ID="Robot_2">
+            <hasLocationType rdf:resource="#bar"/>
+            <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >8.934273133764261</lng>
+            <hasMessage>
+              <Message rdf:ID="NextDestinationRobot2"/>
+            </hasMessage>
+            <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >44.40789816527032</lat>
+          </Robot>
+        </hasToAgent>
+      </TourUnit>
+    </hasTourUnit>
+    <hasTourUnit>
+      <TourUnit rdf:ID="TourUnit_2">
+        <hasToAgent rdf:resource="#Beacon_6"/>
+        <hasFromAgent rdf:resource="#Robot_2"/>
+      </TourUnit>
+    </hasTourUnit>
+  </Tour>
+  <owl:Thing rdf:ID="SWRLInjected_78"/>
+  <rdf:Description rdf:ID="Rule-ShopLoverPortion">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_59"/>
+  <owl:Thing rdf:ID="SWRLInjected_118"/>
+  <rdf:Description rdf:ID="Rule-ArtLoverPortion">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_98"/>
+  <owl:Thing rdf:ID="SWRLInjected_79"/>
+  <owl:Thing rdf:ID="SWRLInjected_97"/>
+  <owl:Thing rdf:ID="SWRLInjected_56"/>
+  <rdf:Description rdf:ID="Query-SpendDistance">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_57"/>
+  <owl:Thing rdf:ID="SWRLInjected_95"/>
+  <owl:Thing rdf:ID="SWRLInjected_54"/>
+  <rdf:Description rdf:ID="Rule-2">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_94"/>
+  <rdf:Description rdf:ID="Query-SpendTime_AntiqueShop">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_159">
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >21.37803</distance>
+    <hasTimeOfTheDay rdf:resource="#lunchTime"/>
+    <hasLocationType rdf:resource="#church"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_160">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T14:14:41</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T14:14:41</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_52"/>
+  <Rule rdf:ID="SpendDays"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#lt"/>
+                <swrl:classPredicate rdf:resource="#Restaurant"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+            <swrl:argument1 rdf:resource="#hu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Hours"/>
+  <owl:Thing rdf:ID="SWRLInjected_136"/>
+  <owl:Thing rdf:ID="SWRLInjected_16"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#stb"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                                    >180</rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:List>
+                                </rdf:rest>
+                                <rdf:first rdf:resource="#astb"/>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#astb"/>
+                          <swrl:Variable rdf:about="#stb"/>
+                          <swrl:Variable rdf:about="#sd"/>
+                        </swrl:arguments>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#sd"/>
+                <swrl:argument1 rdf:resource="#t"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#BarLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_53"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#Shop"/>
+                <swrl:argument1 rdf:resource="#lt"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#hu"/>
+            <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Rule-ShopLoverTime">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_17"/>
+  <owl:Thing rdf:ID="SWRLInjected_50"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_20">
+    <hasTimeOfTheDay rdf:resource="#midnight"/>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasFromAgent rdf:resource="#Robot_2"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_19">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:25</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:34</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_14"/>
+  <owl:Thing rdf:ID="SWRLInjected_51"/>
+  <owl:Thing rdf:ID="SWRLInjected_15"/>
+  <owl:Thing rdf:ID="SWRLInjected_76"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_15">
+    <hasLocationType rdf:resource="#church"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_16">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:34:25</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T05:34:27</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >22.524597</distance>
+    <hasTimeOfTheDay rdf:resource="#dinnerTime"/>
+  </PathHistoryUnit>
+  <rdf:Description rdf:ID="Rule-SlowWalker">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_181">
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_182">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T18:53:32</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T18:53:32</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_77"/>
+  <rdf:Description>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adult</rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Child</rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >TeenAge</rdf:first>
+        </rdf:rest>
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Senior</rdf:first>
+      </rdf:rest>
+    </rdf:rest>
+  </rdf:Description>
+  <Rule rdf:ID="SpendTime"/>
+  <owl:Thing rdf:ID="SWRLInjected_38"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_37">
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >83.58255</distance>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_38">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T06:53:32</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T12:53:32</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#midnight"/>
+    <hasLocationType rdf:resource="#church"/>
+  </PathHistoryUnit>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_17">
+    <hasTimeOfTheDay rdf:resource="#midnight"/>
+    <hasToAgent rdf:resource="#Robot_2"/>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_18">
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:25</temporal:hasStartTime>
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:12:25</temporal:hasFinishTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >23.933323</distance>
+    <hasFromAgent rdf:resource="#Beacon_6"/>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_18"/>
+  <owl:Thing rdf:ID="SWRLInjected_39"/>
+  <owl:Thing rdf:ID="SWRLInjected_75"/>
+  <owl:Thing rdf:ID="SWRLInjected_19"/>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_162">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_161">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T17:14:41</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T14:14:41</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#lunchTime"/>
+    <hasLocationType rdf:resource="#church"/>
+  </LocationHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_21"/>
+  <owl:Thing rdf:ID="SWRLInjected_49"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:argument2 rdf:resource="#artd"/>
+                    <swrl:propertyPredicate rdf:resource="#spendTime_Art"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                                    >0.40</rdf:first>
+                                  </rdf:List>
+                                </rdf:rest>
+                                <rdf:first rdf:resource="#div"/>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first>
+                              <swrl:BuiltinAtom>
+                                <swrl:arguments>
+                                  <rdf:List>
+                                    <rdf:rest>
+                                      <rdf:List>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#long"
+                                        >60</rdf:first>
+                                      </rdf:List>
+                                    </rdf:rest>
+                                    <rdf:first rdf:resource="#globd"/>
+                                  </rdf:List>
+                                </swrl:arguments>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                              </swrl:BuiltinAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#div"/>
+                          <swrl:Variable rdf:about="#artd"/>
+                          <swrl:Variable rdf:about="#globd"/>
+                        </swrl:arguments>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#globd"/>
+                <swrl:argument1 rdf:resource="#t"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#ArtLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#distance"/>
+                        <swrl:argument1 rdf:resource="#hu"/>
+                        <swrl:argument2 rdf:resource="#d"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                    <swrl:argument2 rdf:resource="#hu"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:classPredicate rdf:resource="#Tourist"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#hu"/>
+            <swrl:classPredicate rdf:resource="#PathHistoryUnit"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_48"/>
+  <owl:Thing rdf:ID="SWRLInjected_20"/>
+  <PathHistoryUnit rdf:ID="PathHistoryUnit_654">
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_655">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T17:34:27</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-14T17:34:27</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+  </PathHistoryUnit>
+  <owl:Thing rdf:ID="SWRLInjected_1"/>
+  <rdf:Description rdf:ID="Rule-BarLoverMorningEveningTime">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_47"/>
+  <rdf:Description rdf:ID="Query-SpendTime_Monument">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_46"/>
+  <owl:Thing rdf:ID="SWRLInjected_25"/>
+  <owl:Thing rdf:ID="SWRLInjected_5"/>
+  <PresentTourist rdf:ID="Tourist_1Robot_2">
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_114">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:27:11</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-20T00:27:10</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasAgent rdf:resource="#Robot_2"/>
+    <hasTourist>
+      <Tourist rdf:ID="Tourist_1">
+        <hasHistoryUnit>
+          <LocationHistoryUnit rdf:ID="LocationHistoryUnit_70">
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_69">
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:04</temporal:hasFinishTime>
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:26:56</temporal:hasStartTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasLocationType rdf:resource="#bar"/>
+            <hasToAgent>
+              <Beacon rdf:ID="Beacon_1">
+                <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >8.933888236770624</lng>
+                <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >44.40789912332349</lat>
+                <hasLocationType rdf:resource="#bar"/>
+                <hasMessage>
+                  <Message rdf:ID="NextDestinationBeacon1"/>
+                </hasMessage>
+              </Beacon>
+            </hasToAgent>
+            <hasFromAgent rdf:resource="#Beacon_1"/>
+          </LocationHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <LocationHistoryUnit rdf:ID="LocationHistoryUnit_111">
+            <hasFromAgent rdf:resource="#Beacon_1"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_110">
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:10</temporal:hasFinishTime>
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:07</temporal:hasStartTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasToAgent rdf:resource="#Beacon_1"/>
+            <hasLocationType rdf:resource="#bar"/>
+          </LocationHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <LocationHistoryUnit rdf:ID="LocationHistoryUnit_115">
+            <hasValidPeriod rdf:resource="#ValidPeriod_114"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasLocationType rdf:resource="#bar"/>
+            <hasFromAgent rdf:resource="#Robot_2"/>
+          </LocationHistoryUnit>
+        </hasHistoryUnit>
+        <hasMessage rdf:resource="#NextDestinationRobot2"/>
+        <hasHistoryUnit>
+          <LocationHistoryUnit rdf:ID="LocationHistoryUnit_74">
+            <hasLocationType rdf:resource="#bar"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_73">
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:07</temporal:hasFinishTime>
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:04</temporal:hasStartTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasToAgent rdf:resource="#Beacon_5"/>
+            <hasFromAgent rdf:resource="#Beacon_5"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+          </LocationHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <PathHistoryUnit rdf:ID="PathHistoryUnit_112">
+            <hasLocationType rdf:resource="#bar"/>
+            <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >21.981508</distance>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_113">
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:10</temporal:hasStartTime>
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:10</temporal:hasFinishTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasFromAgent rdf:resource="#Beacon_1"/>
+            <hasToAgent rdf:resource="#Robot_2"/>
+          </PathHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <PathHistoryUnit rdf:ID="PathHistoryUnit_67">
+            <hasFromAgent rdf:resource="#Robot_2"/>
+            <hasLocationType rdf:resource="#bar"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >21.981508</distance>
+            <hasToAgent rdf:resource="#Beacon_1"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_68">
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:26:56</temporal:hasStartTime>
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:26:56</temporal:hasFinishTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+          </PathHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <LocationHistoryUnit rdf:ID="LocationHistoryUnit_21">
+            <hasLocationType rdf:resource="#bar"/>
+            <hasToAgent rdf:resource="#Robot_2"/>
+            <hasFromAgent rdf:resource="#Robot_2"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_20">
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:22:14</temporal:hasStartTime>
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:26:56</temporal:hasFinishTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+          </LocationHistoryUnit>
+        </hasHistoryUnit>
+        <language rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >italian</language>
+        <storyTellingStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >artLover</storyTellingStyle>
+        <hasHistoryUnit>
+          <PathHistoryUnit rdf:ID="PathHistoryUnit_108">
+            <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >25.119</distance>
+            <hasLocationType rdf:resource="#bar"/>
+            <hasFromAgent rdf:resource="#Beacon_5"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_109">
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:07</temporal:hasStartTime>
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:07</temporal:hasFinishTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasToAgent rdf:resource="#Beacon_1"/>
+          </PathHistoryUnit>
+        </hasHistoryUnit>
+        <hasHistoryUnit>
+          <PathHistoryUnit rdf:ID="PathHistoryUnit_71">
+            <hasToAgent rdf:resource="#Beacon_5"/>
+            <hasValidPeriod>
+              <temporal:ValidPeriod rdf:ID="ValidPeriod_72">
+                <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:04</temporal:hasStartTime>
+                <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >2010-09-20T00:27:04</temporal:hasFinishTime>
+              </temporal:ValidPeriod>
+            </hasValidPeriod>
+            <hasFromAgent rdf:resource="#Beacon_1"/>
+            <hasTimeOfTheDay rdf:resource="#midnight"/>
+            <hasLocationType rdf:resource="#bar"/>
+            <distance rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >25.119</distance>
+          </PathHistoryUnit>
+        </hasHistoryUnit>
+        <hasMessage rdf:resource="#NextDestinationBeacon6"/>
+      </Tourist>
+    </hasTourist>
+  </PresentTourist>
+  <rdf:Description rdf:ID="Query-SpendTime_Shop">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_45"/>
+  <owl:Thing rdf:ID="SWRLInjected_24"/>
+  <owl:Thing rdf:ID="SWRLInjected_6"/>
+  <owl:Thing rdf:ID="SWRLInjected_23"/>
+  <owl:Thing rdf:ID="SWRLInjected_3"/>
+  <Message rdf:ID="Message_1"/>
+  <AntiqueShop rdf:ID="antiqueShop"/>
+  <owl:Thing rdf:ID="SWRLInjected_2"/>
+  <owl:Thing rdf:ID="SWRLInjected_43"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+                <swrl:argument1 rdf:resource="#hu"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Query-SpendTime_Church">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_42"/>
+  <owl:Thing rdf:ID="SWRLInjected_4"/>
+  <Tour rdf:ID="nas">
+    <hasTourUnit>
+      <TourUnit rdf:ID="TourUnit_3">
+        <hasToAgent rdf:resource="#Beacon_1"/>
+        <hasFromAgent rdf:resource="#Robot_2"/>
+      </TourUnit>
+    </hasTourUnit>
+  </Tour>
+  <owl:Thing rdf:ID="SWRLInjected_9"/>
+  <owl:Thing rdf:ID="SWRLInjected_41"/>
+  <owl:Thing rdf:ID="SWRLInjected_92"/>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="#t"/>
+                        <swrl:argument2 rdf:resource="#hu"/>
+                        <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="#hasLocationType"/>
+                            <swrl:argument1 rdf:resource="#hu"/>
+                            <swrl:argument2 rdf:resource="#lt"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                                <swrl:argument2 rdf:resource="#vp"/>
+                                <swrl:argument1 rdf:resource="#hu"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments rdf:parseType="Collection">
+                                      <swrl:Variable rdf:about="#d"/>
+                                      <swrl:Variable rdf:about="#vp"/>
+                                      <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:classPredicate rdf:resource="#Tourist"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#hu"/>
+                <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#lt"/>
+            <swrl:classPredicate rdf:resource="#Church"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:BuiltinAtom>
+                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#sum"/>
+                <swrl:arguments rdf:parseType="Collection">
+                  <swrl:Variable rdf:about="#d"/>
+                </swrl:arguments>
+              </swrl:BuiltinAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:BuiltinAtom>
+            <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+            <swrl:arguments rdf:parseType="Collection">
+              <swrl:Variable rdf:about="#t"/>
+            </swrl:arguments>
+          </swrl:BuiltinAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#hu"/>
+            <swrl:classPredicate rdf:resource="#LocationHistoryUnit"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:arguments rdf:parseType="Collection">
+                              <swrl:Variable rdf:about="#d"/>
+                              <swrl:Variable rdf:about="#vp"/>
+                              <temporal:Granularity rdf:about="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#Minutes"/>
+                            </swrl:arguments>
+                            <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#duration"/>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="#vp"/>
+                        <swrl:propertyPredicate rdf:resource="#hasValidPeriod"/>
+                        <swrl:argument1 rdf:resource="#hu"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument2 rdf:resource="#hu"/>
+                    <swrl:argument1 rdf:resource="#t"/>
+                    <swrl:propertyPredicate rdf:resource="#hasHistoryUnit"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:classPredicate rdf:resource="#Tourist"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <owl:Thing rdf:ID="SWRLInjected_120"/>
+  <Rule rdf:ID="SpendDistance"/>
+  <owl:Thing rdf:ID="SWRLInjected_40"/>
+  <owl:Thing rdf:ID="SWRLInjected_93"/>
+  <owl:Thing rdf:ID="SWRLInjected_121"/>
+  <Museum rdf:ID="museum"/>
+  <owl:Thing rdf:ID="SWRLInjected_7"/>
+  <owl:Thing rdf:ID="SWRLInjected_90"/>
+  <rdf:Description rdf:ID="Rule-Message_BarLover">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <owl:Thing rdf:ID="SWRLInjected_122"/>
+  <owl:Thing rdf:ID="SWRLInjected_8"/>
+  <owl:Thing rdf:ID="SWRLInjected_91"/>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+                <swrl:argument2>
+                  <Message rdf:ID="ArtLoverMessage"/>
+                </swrl:argument2>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                    <swrl:argument1 rdf:resource="#mq"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#mq"/>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#ArtLover"/>
+            <swrl:argument1 rdf:resource="#t"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#PresentTourist"/>
+                <swrl:argument1 rdf:resource="#pt"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#createOWLThing"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#mq"/>
+                          <swrl:Variable rdf:about="#t"/>
+                        </swrl:arguments>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument1 rdf:resource="#pt"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <LocationHistoryUnit rdf:ID="LocationHistoryUnit_220">
+    <hasLocationType rdf:resource="#church"/>
+    <hasValidPeriod>
+      <temporal:ValidPeriod rdf:ID="ValidPeriod_219">
+        <temporal:hasFinishTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-13T23:01:49</temporal:hasFinishTime>
+        <temporal:hasStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2010-09-11T18:14:41</temporal:hasStartTime>
+      </temporal:ValidPeriod>
+    </hasValidPeriod>
+    <hasTimeOfTheDay rdf:resource="#evening"/>
+  </LocationHistoryUnit>
+  <rdf:Description>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ArtLover</rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Murderer</rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:rest>
+  </rdf:Description>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:argument2 rdf:resource="#d"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:BuiltinAtom>
+                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                    <swrl:arguments>
+                      <rdf:List>
+                        <rdf:first rdf:resource="#d"/>
+                        <rdf:rest>
+                          <rdf:List>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                            >180</rdf:first>
+                          </rdf:List>
+                        </rdf:rest>
+                      </rdf:List>
+                    </swrl:arguments>
+                  </swrl:BuiltinAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#ShopLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#mq"/>
+            <swrl:classPredicate rdf:resource="#MessageQueue"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="#mq"/>
+                <swrl:argument2>
+                  <Message rdf:ID="SlowWalkerMessage"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="#hasMessage"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                    <swrl:argument1 rdf:resource="#mq"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#PresentTourist"/>
+            <swrl:argument1 rdf:resource="#pt"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#SlowWalker"/>
+                <swrl:argument1 rdf:resource="#t"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:BuiltinAtom>
+                        <swrl:builtin rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#createOWLThing"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                          <swrl:Variable rdf:about="#mq"/>
+                          <swrl:Variable rdf:about="#t"/>
+                        </swrl:arguments>
+                      </swrl:BuiltinAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasTourist"/>
+                    <swrl:argument2 rdf:resource="#t"/>
+                    <swrl:argument1 rdf:resource="#pt"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <rdf:Description rdf:ID="Query-SpendTime_Restaurant">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <Robot rdf:ID="Robot_1">
+    <lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >44.409301153932404</lat>
+    <lng rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >8.944348851928705</lng>
+    <hasLocationType rdf:resource="#bar"/>
+    <hasMessage>
+      <Message rdf:ID="NextDestinationRobot1"/>
+    </hasMessage>
+  </Robot>
+  <swrl:Imp>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#t"/>
+                <swrl:argument2 rdf:resource="#stb"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:BuiltinAtom>
+                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                    <swrl:arguments>
+                      <rdf:List>
+                        <rdf:rest>
+                          <rdf:List>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                            >90</rdf:first>
+                          </rdf:List>
+                        </rdf:rest>
+                        <rdf:first rdf:resource="#stb"/>
+                      </rdf:List>
+                    </swrl:arguments>
+                  </swrl:BuiltinAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#Tourist"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#t"/>
+            <swrl:classPredicate rdf:resource="#BarLover"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->
